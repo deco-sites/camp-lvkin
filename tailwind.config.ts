@@ -11,7 +11,7 @@ export default {
         sliding: "sliding 30s linear infinite",
       },
       boxShadow: {
-        "2xl": "-1px -1px 16px 0px rgba(0,0,0,0.4)"
+        "2xl": "-1px -1px 16px 0px rgba(0,0,0,0.4)",
       },
       keyframes: {
         sliding: {
