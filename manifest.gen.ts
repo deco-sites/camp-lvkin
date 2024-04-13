@@ -4,6 +4,7 @@
 
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
+import * as $$$$$$$$$$$2 from "./apps/weather/loaders/index.ts";
 import * as $$$2 from "./loaders/availableIcons.ts";
 import * as $$$3 from "./loaders/icons.ts";
 import * as $$$0 from "./loaders/Layouts/ProductCard.tsx";
@@ -56,6 +57,7 @@ import * as $$$$$$44 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$45 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$46 from "./sections/Social/WhatsApp.tsx";
 import * as $$$$$$47 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$48 from "./sections/Weather/Weather.tsx";
 
 const manifest = {
   "loaders": {
@@ -116,10 +118,12 @@ const manifest = {
     "deco-sites/camp-lvkin/sections/Social/InstagramPosts.tsx": $$$$$$45,
     "deco-sites/camp-lvkin/sections/Social/WhatsApp.tsx": $$$$$$46,
     "deco-sites/camp-lvkin/sections/Theme/Theme.tsx": $$$$$$47,
+    "deco-sites/camp-lvkin/sections/Weather/Weather.tsx": $$$$$$48,
   },
   "apps": {
     "deco-sites/camp-lvkin/apps/decohub.ts": $$$$$$$$$$$0,
     "deco-sites/camp-lvkin/apps/site.ts": $$$$$$$$$$$1,
+    "deco-sites/camp-lvkin/apps/weather/loaders/index.ts": $$$$$$$$$$$2,
   },
   "name": "deco-sites/camp-lvkin",
   "baseUrl": import.meta.url,
