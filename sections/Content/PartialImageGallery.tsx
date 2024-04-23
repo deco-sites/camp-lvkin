@@ -53,26 +53,28 @@ export default function PartialImageGallery(
   const imagePage = items.slice(0, page * 3);
 
   return items.length >= 3 && (
-    <section class="partial-image-gallery-section">
+    <section class="partial-image-gallery-section max-w-[70%] mx-auto mt-8">
       {title && (
-        <h2 class="partial-image-gallery-title text-center mx-auto">
+        <h2 class="partial-image-gallery-title text-center mx-auto text-3xl font-bold mb-2">
           {title}
         </h2>
       )}
       {description && (
-        <h2 class="partial-image-gallery-description text-center mx-auto max-w-40">
+        <p class="partial-image-gallery-description text-center mx-auto w-full text-lg mb-4">
           {description}
-        </h2>
+        </p>
       )}
-      <div class="partial-image-gallery mx-auto">
+      <div class="partial-image-gallery mx-auto columns-3 gap-x-3">
         {imagePage.map((item: Image) => (
-          <Image alt={item.alt} title="imagem" src={item.src} width={540} />
+          <figure class="grid grid-cols-[1fr auto] mb-3 break-inside-avoid">
+            <Image class="hover:scale-125 transition border border-[#ddd]" alt={item.alt} title="imagem" src={item.src} width={540} />
+          </figure>
         ))}
       </div>
 
       {Math.ceil(items.length / 3) > page && (
         <button
-          className="partial-image-gallery-see-more"
+          className="partial-image-gallery-see-more mx-auto bg-[#3c3c3c] flex items-center text-white h-10 px-5"
           {...usePartialSection({ props: { page: page + 1 } })}
         >
           {showMoreButtonText}

@@ -12,6 +12,8 @@ export interface HorizontalProductCardProps {
     price: number;
     buyButtonText: string;
   };
+  maxWidth: "max-w-xl" | " max-w-2xl" | " max-w-3xl" | " max-w-4xl" | " max-w-5xl" | " max-w-6xl" | " max-w-7xl" | "max-w-full";
+  animateImage: boolean;
 }
 
 export function ErrorFallback({ error }: { error?: Error }) {
@@ -22,10 +24,10 @@ export function ErrorFallback({ error }: { error?: Error }) {
         alt="error image"
         class="error-ffallback-image"
       />
-      <h3 className="fallback-error-title">
+      <h3 class="fallback-error-title">
         OPS! Encontramos um problema :{"("}
       </h3>
-      <p className="fallback-error-description">Erro: {error?.message}</p>
+      <p class="fallback-error-description">Erro: {error?.message}</p>
       <a href="/culturas" title="página culturas">Saiba mais sobre nós!</a>
     </div>
   );
@@ -36,34 +38,34 @@ export function LoadingFallback() {
 }
 
 const HorizontalProductCard = (
-  { image, productInfo }: HorizontalProductCardProps,
+  { image, productInfo, maxWidth, animateImage }: HorizontalProductCardProps,
 ) => (
-  <section class="horizontal-product-card-section flex">
+  <section class={`horizontal-product-card-section flex  sm:max-h-60 items-center overflow-hidden justify-center w-fit mx-auto bg-[#3c3c3c] border border-[#3c3c3c] ${maxWidth}`}>
     {image &&
       (
-        <Image
-          class="horizontal-product-card-image"
-          width={600}
-          src={image}
-          alt={image}
-          loading="lazy"
-        />
+        <div class="horizontal-product-card-image-container max-w-[200px] w-[80%] overflow-hidden">
+          <Image
+            class={`horizontal-product-card-image h-fit ${animateImage && "hover:scale-125 transition"}`}
+            width={200}
+            src={image}
+            alt={image}
+            loading="lazy"
+          />
+        </div>
       )}
-    <div class="horizontal-product-card-details">
-      <h3 class="horizontal-product-card-title">
+    <div class="horizontal-product-card-details px-4 py-5 flex flex-col overflow-ellipsis gap-3">
+      <h3 class="horizontal-product-card-title text-white text-3xl">
         {productInfo.title}
       </h3>
-      <p class="horizontal-product-card-description">
+      <span class="horizontal-product-card-price text-white text-xl">
+        {formatPrice(productInfo.price)}
+      </span>
+      <p class="horizontal-product-card-description text-white font-light text-sm flex flex-1 overflow-ellipsis">
         {productInfo.description}
       </p>
-      <div class="horizontal-product-card-buy-">
-        <span className="horizontal-product-card-price">
-          {formatPrice(productInfo.price)}
-        </span>
-        <button className="horizontal-product-card-add-to-cart">
-          {productInfo.buyButtonText}
-        </button>
-      </div>
+      <button class="horizontal-product-card-add-to-cart bg-white text-[#3c3c3c] h-10 mt-auto rounded-md">
+        {productInfo.buyButtonText}
+      </button>
     </div>
   </section>
 );
