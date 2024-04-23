@@ -67,7 +67,13 @@ export default function PartialImageGallery(
       <div class="partial-image-gallery mx-auto columns-3 gap-x-3">
         {imagePage.map((item: Image) => (
           <figure class="grid grid-cols-[1fr auto] mb-3 break-inside-avoid">
-            <Image class="hover:scale-125 transition border border-[#ddd]" alt={item.alt} title="imagem" src={item.src} width={540} />
+            <Image
+              class="hover:scale-125 transition border border-[#ddd]"
+              alt={item.alt}
+              title="imagem"
+              src={item.src}
+              width={540}
+            />
           </figure>
         ))}
       </div>

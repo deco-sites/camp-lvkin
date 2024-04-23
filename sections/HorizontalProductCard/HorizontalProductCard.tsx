@@ -12,7 +12,15 @@ export interface HorizontalProductCardProps {
     price: number;
     buyButtonText: string;
   };
-  maxWidth: "max-w-xl" | " max-w-2xl" | " max-w-3xl" | " max-w-4xl" | " max-w-5xl" | " max-w-6xl" | " max-w-7xl" | "max-w-full";
+  maxWidth:
+    | "max-w-xl"
+    | " max-w-2xl"
+    | " max-w-3xl"
+    | " max-w-4xl"
+    | " max-w-5xl"
+    | " max-w-6xl"
+    | " max-w-7xl"
+    | "max-w-full";
   animateImage: boolean;
 }
 
@@ -40,12 +48,16 @@ export function LoadingFallback() {
 const HorizontalProductCard = (
   { image, productInfo, maxWidth, animateImage }: HorizontalProductCardProps,
 ) => (
-  <section class={`horizontal-product-card-section flex  sm:max-h-60 items-center overflow-hidden justify-center w-fit mx-auto bg-[#3c3c3c] border border-[#3c3c3c] ${maxWidth}`}>
+  <section
+    class={`horizontal-product-card-section flex  sm:max-h-60 items-center overflow-hidden justify-center w-fit mx-auto bg-[#3c3c3c] border border-[#3c3c3c] ${maxWidth}`}
+  >
     {image &&
       (
         <div class="horizontal-product-card-image-container max-w-[200px] w-[80%] overflow-hidden">
           <Image
-            class={`horizontal-product-card-image h-fit ${animateImage && "hover:scale-125 transition"}`}
+            class={`horizontal-product-card-image h-fit ${
+              animateImage && "hover:scale-125 transition"
+            }`}
             width={200}
             src={image}
             alt={image}
