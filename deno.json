@@ -1,7 +1,6 @@
 {
   "imports": {
     "deco-sites/camp-lvkin/": "./",
-
     "deco/": "https://denopkg.com/deco-cx/deco@1.57.19/",
     "apps/": "https://denopkg.com/deco-cx/apps@0.35.14/",
     "$fresh/": "https://deno.land/x/fresh@1.6.5/",
@@ -10,6 +9,8 @@
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
+    "react-toastify": "https://esm.sh/react-toastify@9.1.1?&external=react,react-dom&alias=react/jsx-runtime:preact/jsx-runtime&deps=preact@10.19.2&target=es2022",
+    "react": "https://esm.sh/preact@10.19.2/compat",
     "std/": "https://deno.land/std@0.190.0/",
     "partytown/": "https://denopkg.com/deco-cx/partytown@0.4.8/",
     "daisyui": "npm:daisyui@4.6.0"
