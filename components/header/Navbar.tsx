@@ -17,12 +17,11 @@ import { Buttons, Logo } from "../../components/header/Header.tsx";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
 function Navbar(
-  { items, searchbar, logo, buttons, logoPosition = "left", device }: {
+  { items, searchbar, logo, buttons, device }: {
     items: SiteNavigationElement[];
     searchbar?: SearchbarProps;
     logo?: Logo;
     buttons?: Buttons;
-    logoPosition?: "left" | "center";
     device: "mobile" | "desktop" | "tablet";
   },
 ) {
@@ -68,18 +67,7 @@ function Navbar(
   // Desktop header
   return (
     <div class="hidden sm:grid sm:grid-cols-3 items-center border-b border-base-200 w-full px-6">
-      <ul
-        class={`flex gap-6 col-span-1 ${
-          logoPosition === "left" ? "justify-center" : "justify-start"
-        }`}
-      >
-        {items.map((item) => <NavItem item={item} />)}
-      </ul>
-      <div
-        class={`flex ${
-          logoPosition === "left" ? "justify-start -order-1" : "justify-center"
-        }`}
-      >
+      <div class="flex justify-start -order-1">
         {logo && (
           <a
             href="/"
@@ -95,6 +83,9 @@ function Navbar(
           </a>
         )}
       </div>
+      <ul class="flex gap-6 col-span-1 justify-center">
+        {items.map((item) => <NavItem item={item} />)}
+      </ul>
       <div class="flex-none flex items-center justify-end gap-6 col-span-1">
         {!buttons?.hideSearchButton && (
           <div class="flex items-center text-xs font-thin gap-1">

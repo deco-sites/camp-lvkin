@@ -39,7 +39,7 @@ export default function HeroFlats({
             image
               ? PLACEMENT[placement]
               : "flex-col items-center justify-center text-center"
-          } lg:py-36 gap-12 md:gap-20 items-center`}
+          } lg:py-24 lg:max-w-[1230px] gap-12 md:gap-20 items-center`}
         >
           {image && (
             <Image
@@ -76,7 +76,7 @@ export default function HeroFlats({
                   id={item?.id}
                   href={item?.href}
                   target={item?.href.includes("http") ? "_blank" : "_self"}
-                  class={`group relative overflow-hidden rounded-full hover:bg-gradient-to-r px-6 py-2 lg:px-8 lg:py-3 transition-all duration-300 ease-out ${
+                  class={`group  text-center border-2 border-black rounded-md relative overflow-hidden  hover:bg-gradient-to-r px-6 py-2 lg:px-8 lg:py-3 transition-all duration-300 ease-out ${
                     item.variant === "Reverse"
                       ? "bg-secondary text-white"
                       : "bg-accent text-black"
